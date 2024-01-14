@@ -1,0 +1,19 @@
+{
+    "diagnostics": {
+        "globals": [
+            "jit"
+        ],
+        "groupFileStatus": {
+            "unused": "Any"
+        },
+        "groupSeverity": {
+            "unused": "Warning"
+        },
+        "neededFileStatus": {
+            "redefined-local": "Any"
+        },
+        "severity": {
+            "redefined-local": "Warning"
+        }
+    }
+}

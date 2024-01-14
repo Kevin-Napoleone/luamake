@@ -1,0 +1,8 @@
+/.vscode/ipch/
+/build/
+/luamake
+/luamake.exe
+/tools/lua54.dll
+/.ninja_log
+/.ninja_deps
+/tools/*/lua.def

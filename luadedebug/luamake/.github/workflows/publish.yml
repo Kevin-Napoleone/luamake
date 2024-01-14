@@ -1,0 +1,42 @@
+name: build
+on: push
+jobs:
+  windows:
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [2019, 2022]
+    runs-on: windows-${{ matrix.version }}
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules : recursive
+    - run: .\compile\build.bat
+    - run: .\luamake.exe version
+  ubuntu:
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [20.04, 22.04]
+    runs-on: ubuntu-${{ matrix.version }}
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules : recursive
+    - run: sudo apt-get update
+    - run: sudo apt-get install -y libreadline-dev ninja-build
+    - run: ./compile/build.sh
+    - run: ./luamake version
+  macos:
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [11, 12, 13]
+    runs-on: macos-${{ matrix.version }}
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules : recursive
+    - run: brew install ninja
+    - run: ./compile/build.sh
+    - run: ./luamake version

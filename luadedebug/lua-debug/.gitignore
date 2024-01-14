@@ -1,0 +1,8 @@
+/.vscode/ipch/
+/.vscode/c_cpp_properties.json
+/.vs/
+/publish/
+/build/
+/extension/package.json
+.DS_Store
+.idea/
